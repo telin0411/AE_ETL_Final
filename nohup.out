@@ -1,0 +1,51 @@
+2015-07-01 10:56:06,742 INFO  [main] util.VersionInfo: HBase 1.0.0
+2015-07-01 10:56:06,743 INFO  [main] util.VersionInfo: Source code repository git://HW10676.local/Users/enis/projects/git-repos/hbase revision=6c98bff7b719efdb16f71606f3b7d8229445eb81
+2015-07-01 10:56:06,743 INFO  [main] util.VersionInfo: Compiled by enis on Sat Feb 14 19:49:22 PST 2015
+2015-07-01 10:56:06,743 INFO  [main] util.VersionInfo: From source with checksum 9a9c6029562607a190ec26066b5c3302
+2015-07-01 10:56:07,215 INFO  [main] thrift.ThriftServerRunner: Using default thrift server type
+2015-07-01 10:56:07,215 INFO  [main] thrift.ThriftServerRunner: Using thrift server type threadpool
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/hbase-1.0.0/lib/slf4j-log4j12-1.7.7.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop-2.6.0/share/hadoop/common/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+2015-07-01 10:56:07,680 INFO  [main] impl.MetricsConfig: loaded properties from hadoop-metrics2-hbase.properties
+2015-07-01 10:56:07,744 INFO  [main] impl.MetricsSystemImpl: Scheduled snapshot period at 10 second(s).
+2015-07-01 10:56:07,744 INFO  [main] impl.MetricsSystemImpl: HBase metrics system started
+2015-07-01 10:56:07,879 INFO  [main] mortbay.log: Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2015-07-01 10:56:07,883 INFO  [main] http.HttpRequestLog: Http request log for http.requests.thrift is not defined
+2015-07-01 10:56:07,892 INFO  [main] http.HttpServer: Added global filter 'safety' (class=org.apache.hadoop.hbase.http.HttpServer$QuotingInputFilter)
+2015-07-01 10:56:07,895 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context thrift
+2015-07-01 10:56:07,895 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2015-07-01 10:56:07,895 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2015-07-01 10:56:07,909 INFO  [main] http.HttpServer: HttpServer.start() threw a non Bind IOException
+java.net.BindException: Port in use: 0.0.0.0:9095
+	at org.apache.hadoop.hbase.http.HttpServer.openListeners(HttpServer.java:1015)
+	at org.apache.hadoop.hbase.http.HttpServer.start(HttpServer.java:951)
+	at org.apache.hadoop.hbase.http.InfoServer.start(InfoServer.java:90)
+	at org.apache.hadoop.hbase.thrift.ThriftServer.doMain(ThriftServer.java:102)
+	at org.apache.hadoop.hbase.thrift.ThriftServer.main(ThriftServer.java:232)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:444)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.mortbay.jetty.nio.SelectChannelConnector.open(SelectChannelConnector.java:216)
+	at org.apache.hadoop.hbase.http.HttpServer.openListeners(HttpServer.java:1010)
+	... 4 more
+Exception in thread "main" java.net.BindException: Port in use: 0.0.0.0:9095
+	at org.apache.hadoop.hbase.http.HttpServer.openListeners(HttpServer.java:1015)
+	at org.apache.hadoop.hbase.http.HttpServer.start(HttpServer.java:951)
+	at org.apache.hadoop.hbase.http.InfoServer.start(InfoServer.java:90)
+	at org.apache.hadoop.hbase.thrift.ThriftServer.doMain(ThriftServer.java:102)
+	at org.apache.hadoop.hbase.thrift.ThriftServer.main(ThriftServer.java:232)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:444)
+	at sun.nio.ch.Net.bind(Net.java:436)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.mortbay.jetty.nio.SelectChannelConnector.open(SelectChannelConnector.java:216)
+	at org.apache.hadoop.hbase.http.HttpServer.openListeners(HttpServer.java:1010)
+	... 4 more
